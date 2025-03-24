@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+        }
+        .header {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Makes it clear it's clickable */
+            text-decoration: none;
+        }
+        .iframe-container {
+            width: 100%;
+            height: calc(100vh - 110px);
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header" onclick="window.open('https://t.me/cvanshu', '_blank')">
+        WhatsApp Chat Viewer
+    </div>
+
+    <div class="iframe-container">
+        <iframe src="https://whatsapp-chat-parser.netlify.app"></iframe>
+    </div>
+
+</body>
+</html>
