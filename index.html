@@ -1,121 +1,215 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile | Linktree</title>
+
+    <title>My Linktree</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            transition: background 0.3s, color 0.3s;
-        }
-        .container {
-            width: 90%;
-            max-width: 400px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f4f4;
+
+            margin: 0;
+
             padding: 20px;
-            border-radius: 10px;
+
+            text-align: center;
+
+        }
+
+        .container {
+
+            max-width: 400px;
+
+            margin: auto;
+
             background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
         }
-        .profile-img {
-            width: 100px;
-            height: 100px;
+
+        .profile-pic {
+
+            width: 100px; /* Adjust as needed */
+
+            height: 100px; /* Adjust as needed */
+
             border-radius: 50%;
+
             object-fit: cover;
-            margin: 10px auto;
-            display: block;
+
+            margin-bottom: 10px;
+
         }
+
         h1 {
+
+            margin-bottom: 20px;
+
             font-size: 24px;
-            margin: 10px 0;
+
         }
-        p {
-            font-size: 14px;
-            color: #666;
-        }
-        .links {
-            margin-top: 20px;
-        }
+
         .link {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            background: #007bff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-color: #007bff;
+
             color: white;
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            border-radius: 5px;
+
             text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: 0.3s;
+
+            transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+
         }
+
         .link:hover {
-            background: #0056b3;
+
+            background-color: #0056b3;
+
+            transform: scale(1.05); /* Slight scaling effect on hover */
+
         }
-        .theme-toggle {
-            margin-top: 15px;
+
+        .icon {
+
+            margin-right: 10px;
+
+        }
+
+        footer {
+
+            margin-top: 20px;
+
+            font-size: 12px;
+
+            color: #777;
+
+        }
+
+        /* Floating button styles */
+
+        .floating-button {
+
+            position: fixed;
+
+            bottom: 40px;
+
+            right: 40px;
+
+            background-color: #0088cc; /* Telegram color */
+
+            color: white;
+
+            border-radius: 50%;
+
+            width: 60px;
+
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
             cursor: pointer;
-            padding: 8px 15px;
-            background: #222;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: 0.3s;
+
+            transition: background-color 0.3s;
+
         }
-        .theme-toggle:hover {
-            background: #444;
+
+        .floating-button:hover {
+
+            background-color: #006699; /* Darker shade on hover */
+
         }
-        /* Dark mode */
-        .dark-mode {
-            background: #222;
-            color: white;
-        }
-        .dark-mode .container {
-            background: #333;
-        }
-        .dark-mode p {
-            color: #ccc;
-        }
-        .dark-mode .theme-toggle {
-            background: #ddd;
-            color: black;
-        }
+
     </style>
+
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-img">
-        <h1>Shivanshu Shukla</h1>
-        <p>Web Developer | Tech Enthusiast</p>
+<div class="container">
 
-        <div class="links">
-            <a href="https://youtube.com" class="link">YouTube</a>
-            <a href="https://instagram.com" class="link">Instagram</a>
-            <a href="https://facebook.com" class="link">Facebook</a>
-            <a href="https://github.com" class="link">GitHub</a>
-        </div>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDQR538LZVHA29nvq5KqDbQaaZFKqr2GUQIG7-HN_hvJAczF6n0DlGNV14NMypUMt0WD4jB1BxJkSitFjZ5R7pz3kNrkxz43vSS2rFzwNPKKr1oodAQ53EjMFahEyJ8yKqHyLaAb5xANFBwsAkioZbyQNSjH0Hgn_A3fSbwnIvoeWPEY54AHEiVNMZpFK8/s1600/20240916_092710.png" alt="Profile Picture of Shivanshu Shukla" class="profile-pic">
 
-        <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
-    </div>
+    <h1>Shivanshu Shukla</h1>
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-        }
-    </script>
+    <a href="https://www.instagram.com/shivanshu.real" class="link" target="_blank" aria-label="Visit my Instagram">
+
+        <i class="fa fa-instagram icon"></i> ➠ Instagram
+
+    </a>
+
+    <a href="https://wa.me/+918840494996" class="link" target="_blank" aria-label="Chat on WhatsApp">
+
+        <i class="fa fa-whatsapp icon"></i> ➠ Whatsapp
+
+    </a>
+
+    <a href="https://youtube.com/@techegrowth" class="link" target="_blank" aria-label="Watch my YouTube channel">
+
+        <i class="fa fa-youtube-play icon"></i> ➠ YouTube
+
+    </a>
+
+    <a href="https://okwin.plus/#/register?invitationCode=524621490295" class="link" target="_blank" aria-label="Join OkWin Game">
+
+        <i class="fa fa-bolt icon"></i> ➠ OkWin Game
+
+    </a>
+
+    <a href="https://91club.bet/#/register?invitationCode=4344712009657" class="link" target="_blank" aria-label="Join 91 Club Game">
+
+        <i class="fa fa-sign-in icon"></i> ➠ 91 Club Game
+
+    </a>
+
+</div><!-- Floating Telegram Button -->
+
+<a href="https://t.me/CoderNitin" class="floating-button" target="_blank" aria-label="Chat on Telegram">
+
+    <i class="fa fa-telegram"></i>
+
+</a>
+
+<footer>
+
+    &copy; 2024 Coder Nitin
+
+</footer>
 
 </body>
+
 </html>
