@@ -33,6 +33,7 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+            margin-top: -40px; /* Moves content up */
         }
 
         .profile-pic {
@@ -92,11 +93,11 @@
             background: #0056b3;
         }
 
-        /* Dark Mode Toggle */
+        /* Dark Mode Toggle - Moved to Bottom Left */
         .toggle-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
             display: flex;
             align-items: center;
         }
@@ -199,13 +200,13 @@
 </head>
 <body>
 
-<!-- Dark Mode Toggle -->
+<!-- Dark Mode Toggle (Moved to Bottom Left) -->
 <div class="toggle-container">
     <span class="toggle-text">Dark Mode</span>
     <div class="toggle-switch" onclick="toggleDarkMode()"></div>
 </div>
 
-<!-- Main Container -->
+<!-- Main Content -->
 <div class="container">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDQR538LZVHA29nvq5KqDbQaaZFKqr2GUQIG7-HN_hvJAczF6n0DlGNV14NMypUMt0WD4jB1BxJkSitFjZ5R7pz3kNrkxz43vSS2rFzwNPKKr1oodAQ53EjMFahEyJ8yKqHyLaAb5xANFBwsAkioZbyQNSjH0Hgn_A3fSbwnIvoeWPEY54AHEiVNMZpFK8/s1600/20240916_092710.png" alt="Profile Picture of Shivanshu Shukla" class="profile-pic">
     
@@ -228,7 +229,7 @@
         <i class="fa fa-comments icon"></i> WhatsApp Chat Viewer
     </a>
 
-    <a href="https://github.com/your-github" class="link" target="_blank">
+    <a href="https://github.com/instodia" class="link" target="_blank">
         <i class="fa fa-github icon"></i> GitHub
     </a>
 </div>
