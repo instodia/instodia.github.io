@@ -1,1 +1,2 @@
-https://instodia.github.io
+https://instodia.netlify.app/
+https://instodia.netlify.app/smsbomber
