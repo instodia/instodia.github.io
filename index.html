@@ -1,246 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivanshu Shukla</title>
-<meta name="description" content="Shivanshu Shukla – A passionate Web Developer and Coder, dedicated to crafting modern, responsive, and user-friendly websites. With expertise in front-end and back-end development, I create seamless digital experiences. Explore my projects, tech insights, and innovative solutions in web development. Let's build something amazing together!" />
-    <meta property="og:title" content="Profile : Shivanshu Shukla">
-<meta property="og:description" content="Shivanshu Shukla - Web Developer and Coder.">
-<meta property="og:image" content="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg">
-<meta property="og:type" content="website">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/jpg" href="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg">
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivanshu Shukla</title>
+  <meta name="description" content="Shivanshu Shukla – A passionate Web Developer and Coder, dedicated to crafting modern, responsive, and user-friendly websites. With expertise in front-end and back-end development, I create seamless digital experiences. Explore my projects, tech insights, and innovative solutions in web development. Let's build something amazing together!" />
+  <meta property="og:title" content="Profile : Shivanshu Shukla" />
+  <meta property="og:description" content="Shivanshu Shukla - Web Developer and Coder." />
+  <meta property="og:image" content="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="icon" type="image/jpg" href="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
 
-        body {
-            background-color: #121212;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: center;
-        }
+    body {
+      background-color: #121212;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+    }
 
-        .container {
-            max-width: 100%;
-            width: 90%;
-            background: #1e1e1e;
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
-            margin-top: 15px;
-        }
+    .container {
+      width: 90%;
+      background: #1e1e1e;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+      margin-top: 15px;
+    }
 
-        .profile-pic {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
 
-        h1 {
-            font-size: 32px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
+    h1 {
+      font-size: 32px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
 
-        .subtitle {
-            font-size: 18px;
-            color: #bbb;
-            margin-bottom: 20px;
-        }
+    .subtitle {
+      font-size: 16px;
+      color: #c4c4c4;
+      margin-bottom: 10px;
+    }
 
-        .link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #007bff;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s;
-        }
+    .link, .tool-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s;
+    }
 
-        .link:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-        }
+    .link {
+      background: #007bff;
+    }
 
-        .link:active {
-            box-shadow: 0px 0px 10px #007bff;
-        }
+    .tool-link {
+      background: #1fa60a;
+    }
 
-        .icon {
-            margin-right: 12px;
-        }
+    .link:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
 
-        /* Fix WhatsApp Chat Viewer Button Color */
-        .whatsapp-chat-viewer {
-            background: #007bff;
-        }
+    .link:active {
+      box-shadow: 0px 0px 10px #007bff;
+    }
 
-        .whatsapp-chat-viewer:hover {
-            background: #0056b3;
-        }
+    .icon {
+      margin-right: 12px;
+    }
 
-        /* Dark Mode Toggle - Moved Further Down */
-        .toggle-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-        }
+    .copyright {
+      font-size: 16px;
+      color: #ff8640;
+      text-decoration: none;
+      margin-top: 4px;
+      display: inline-block;
+    }
 
-        .toggle-text {
-            margin-right: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .toggle-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+    }
 
-        .toggle-switch {
-            position: relative;
-            width: 50px;
-            height: 24px;
-            background: #444;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+    .toggle-text {
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
 
-        .toggle-switch:before {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 3px;
-            transition: transform 0.3s;
-        }
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: #444;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-        .dark-mode .toggle-switch {
-            background: #007bff;
-        }
+    .toggle-switch:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 3px;
+      transition: transform 0.3s;
+    }
 
-        .dark-mode .toggle-switch:before {
-            transform: translateX(24px);
-        }
+    .dark-mode {
+      background-color: #f4f4f4;
+      color: black;
+    }
 
-        .dark-mode {
-            background-color: #f4f4f4;
-            color: black;
-        }
+    .dark-mode .container {
+      background: white;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .dark-mode .container {
-            background: white;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        }
+    .dark-mode .link {
+      background: #007bff;
+    }
 
-        .dark-mode .link {
-            background: #007bff;
-        }
+    .dark-mode .link:hover {
+      background: #0056b3;
+    }
 
-        .dark-mode .link:hover {
-            background: #0056b3;
-        }
+    .dark-mode .toggle-switch {
+      background: #007bff;
+    }
 
-        /* Floating Telegram Button - Moved Further Down */
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #229ED9;
-            color: white;
-            border-radius: 12px;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.2s;
-        }
+    .dark-mode .toggle-switch:before {
+      transform: translateX(24px);
+    }
 
-        .floating-button:hover {
-            background: #1b7fb5;
-            transform: translateY(-3px);
-        }
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #229ED9;
+      color: white;
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s;
+    }
 
-        .floating-button i {
-            margin-right: 8px;
-        }
-    </style>
+    .floating-button:hover {
+      background: #1b7fb5;
+      transform: translateY(-3px);
+    }
+
+    .floating-button i {
+      margin-right: 8px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Dark Mode Toggle (Moved Further Down) -->
-<div class="toggle-container">
-    <span class="toggle-text">Light Mode</span>
-    <div class="toggle-switch" onclick="toggleDarkMode()"></div>
-</div>
-
-<!-- Main Content -->
 <div class="container">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitK_PmrXp-U6AXg5wm5eCrV2GkxUIxEf3sFsD6bqQQS78NnGN463ABWDcTueJveJi2_WJrq6d1SpGJb-74UloAnh3DKwL2ZXyXaoeYnFXe9Dp4jRSFD_g4BclZVsgMXkKdTTeGhBwaSuc_zHEAJOTg-wXNJ_lCAmjvHH-D5jegvBqggJE5BeynayIypJLX/s1600/20250324_211737.png" alt="Profile" class="profile-pic">
-    
-    <h1>Shivanshu Shukla</h1>
-    <p class="subtitle">Web Developer || Coder</p>
+  <img src="https://i.ibb.co/xSqmdVmq/20250416-044810.jpg" alt="Shivanshu Shukla" class="profile-pic"/>
+  <h1>Shivanshu Shukla</h1>
+  <p class="subtitle">A Passionate Web Developer & Coder</p>
 
-    <a href="https://www.instagram.com/shivanshu.ai" class="link" target="_blank">
-        <i class="fa fa-instagram icon"></i> Instagram
-    </a>
+  <a href="https://www.instagram.com/shivanshu.ai" class="link" target="_blank">
+    <i class="fa fa-instagram icon"></i> Instagram
+  </a>
+  <a href="https://t.me/+__Bfpz0N9Mo5NWZl" class="link" target="_blank">
+    <i class="fa fa-telegram icon"></i> Telegram
+  </a>
+  <a href="https://youtube.com/@techiegrowth" class="link" target="_blank">
+    <i class="fa fa-youtube-play icon"></i> YouTube
+  </a>
+  <a href="https://github.com/instodia" class="link" target="_blank">
+    <i class="fa fa-github icon"></i> Github Profile
+  </a>
+  <a href="https://instodia.netlify.app/smsbomber" class="link" target="_blank">
+    <i class="fa fa-bomb icon"></i> Sms Bomber
+  </a>
+  <a href="https://instodia.netlify.app/age-calculator" class="link" target="_blank">
+    <i class="fa fa-user-circle-o icon"></i> Age Calculator 
+  </a>
+  <a href="https://instodia.netlify.app/" class="tool-link" target="_blank">
+    <i class="fa fa-wrench icon"></i> Best Online Tools
+  </a>
 
-    <a href="https://t.me/+__Bfpz0N9Mo5NWZl" class="link" target="_blank">
-        <i class="fa fa-whatsapp icon"></i> Telegram
-    </a>
-
-    <a href="https://youtube.com/@techiegrowth" class="link" target="_blank">
-        <i class="fa fa-youtube-play icon"></i> YouTube
-    </a>
-
-    <a href="https://github.com/instodia" class="link Github profile" target="_blank">
-        <i class="fa fa-github icon"></i> Github
-    </a>
-
-    <a href="https://instodia.netlify.app/" class="link" target="_blank">
-        <i class="fa fa-wrench"></i>  Best Online Tools
-    </a>
+  <a href="https://instodia.netlify.app/" class="copyright">&copy; instodia.netlify.app</a>
 </div>
-
-<!-- Floating Telegram Button (Moved Further Down) -->
-<a href="https://t.me/cvanshu" class="floating-button" target="_blank">
-    <i class="fa fa-telegram"></i> Telegram
-</a>
-
-<script>
-    function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
-    }
-
-    if (localStorage.getItem("dark-mode") === "true") {
-        document.body.classList.add("dark-mode");
-    }
-</script>
 
 </body>
 </html>
