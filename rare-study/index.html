@@ -40,14 +40,13 @@
   <div id="message"></div>
 
   <script>
-    // Set cookie for 10 hours
     function setLoginCookie() {
       const date = new Date();
       date.setTime(date.getTime() + (10 * 60 * 60 * 1000)); // 10 hours
       document.cookie = "login=success; expires=" + date.toUTCString() + "; path=/";
+      console.log("Cookie set after 2 minutes");
     }
 
-    // Get cookie by name
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -55,19 +54,20 @@
       return null;
     }
 
-    // Generate Access Key button
     document.getElementById('generateBtn').addEventListener('click', function() {
-      setLoginCookie();
-      window.location.href = "https://adrinolinks.in/accessrarestudysite";
+      // Open link immediately
+      window.open("https://adrinolinks.in/accessrarestudysite", "_blank");
+
+      // Set cookie after 2 minutes (120,000 ms)
+      setTimeout(setLoginCookie, 60000);
     });
 
-    // Open PW button
     document.getElementById('openBtn').addEventListener('click', function() {
       const loginCookie = getCookie("login");
       const messageDiv = document.getElementById("message");
 
       if (loginCookie === "success") {
-        window.location.href = "https://rarestudy.site/batches";
+        window.open("https://rarestudy.site/batches", "_blank");
       } else {
         messageDiv.textContent = "Please generate access key first.";
       }
@@ -76,4 +76,5 @@
 
 </body>
 </html>
+
 
