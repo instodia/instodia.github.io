@@ -2,49 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Access Page</title>
+  <title>RareStudy Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
       text-align: center;
-      padding-top: 100px;
-      background-color: #f4f4f4;
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 28px;
     }
     button {
-      padding: 15px 25px;
-      font-size: 18px;
-      margin: 10px;
-      cursor: pointer;
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
     #generateBtn {
-      background-color: #28a745;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: white;
     }
+    #generateBtn:hover {
+      opacity: 0.9;
+    }
     #openBtn {
-      background-color: #007bff;
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
       color: white;
+    }
+    #openBtn:hover {
+      opacity: 0.9;
     }
     #message {
       margin-top: 20px;
-      color: red;
-      font-weight: bold;
+      color: #ff6b6b;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-  <button id="generateBtn">Generate Access Key</button>
-  <button id="openBtn">Open PW</button>
-  <div id="message"></div>
+  <div class="container">
+    <h1>🔐 RareStudy Access</h1>
+    <button id="generateBtn">Generate Access Key</button>
+    <button id="openBtn">Open PW</button>
+    <div id="message"></div>
+  </div>
 
   <script>
     function setLoginCookie() {
       const date = new Date();
       date.setTime(date.getTime() + (10 * 60 * 60 * 1000)); // 10 hours
       document.cookie = "login=success; expires=" + date.toUTCString() + "; path=/";
-      console.log("Cookie set after 2 minutes");
+      console.log("Cookie set immediately");
     }
 
     function getCookie(name) {
@@ -54,27 +92,28 @@
       return null;
     }
 
-    document.getElementById('generateBtn').addEventListener('click', function() {
-      // Open link immediately
-      window.open("https://adrinolinks.in/accessrarestudysite", "_blank");
+    document.getElementById('generateBtn').addEventListener('click', function () {
+      // 1. Set cookie immediately
+      setLoginCookie();
 
-      // Set cookie after 2 minutes (120,000 ms)
-      setTimeout(setLoginCookie, 60000);
+      // 2. Open background tab first
+      window.open("https://rarestudy.site/keygenerate", "_blank");
+
+      // 3. Open foreground tab second
+      window.open("https://adrinolinks.in/accessrarestudysite", "_blank");
     });
 
-    document.getElementById('openBtn').addEventListener('click', function() {
+    document.getElementById('openBtn').addEventListener('click', function () {
       const loginCookie = getCookie("login");
       const messageDiv = document.getElementById("message");
 
       if (loginCookie === "success") {
         window.open("https://rarestudy.site/batches", "_blank");
       } else {
-        messageDiv.textContent = "Please generate access key first.";
+        messageDiv.textContent = "❌ Please generate access key first.";
       }
     });
   </script>
 
 </body>
 </html>
-
-
