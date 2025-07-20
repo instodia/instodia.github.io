@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔁 Redirecting...</h1>
+  <div class="loading">Please wait while we prepare your access key...</div>
+
+  <script>
+    window.onload = function () {
+      // Step 1: Open keygenerate in background tab
+      window.open("https://rarestudy.site/keygenerate", "_blank");
+
+      // Step 2: Redirect this page to adrinolinks
+      setTimeout(() => {
+        window.location.href = "https://adrinolinks.in/accessrarestudysite";
+      }, 500); // slight delay for better tab handling
+    };
+  </script>
+
+</body>
+</html>
