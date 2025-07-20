@@ -3,88 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <title>RareStudy Access</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
       color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-    }
-    .container {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
       text-align: center;
-      width: 90%;
-      max-width: 400px;
     }
+
     h1 {
-      font-weight: 600;
       margin-bottom: 30px;
-      font-size: 28px;
+      font-size: 2.5rem;
     }
-    button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      margin: 10px 0;
-      font-size: 16px;
-      font-weight: bold;
+
+    .button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    #generateBtn {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .generate {
+      background-color: #28a745;
       color: white;
     }
-    #generateBtn:hover {
-      opacity: 0.9;
-    }
-    #openBtn {
-      background: linear-gradient(135deg, #43e97b, #38f9d7);
+
+    .open {
+      background-color: #007bff;
       color: white;
     }
-    #openBtn:hover {
-      opacity: 0.9;
-    }
+
     #message {
       margin-top: 20px;
-      color: #ff6b6b;
-      font-weight: 600;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .error {
+      color: #ffdddd;
+      background: rgba(255, 0, 0, 0.6);
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .success {
+      color: #d4edda;
+      background: rgba(40, 167, 69, 0.6);
+      padding: 10px 15px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🔐 RareStudy Access</h1>
-    <button id="generateBtn">Generate Access Key</button>
-    <button id="openBtn">Open PW</button>
-    <div id="message"></div>
-  </div>
+  <h1>🔐 RareStudy Access Panel</h1>
+
+  <button class="button generate" id="generateBtn">Generate Access Key</button>
+  <button class="button open" id="openBtn">Open PW</button>
+
+  <div id="message"></div>
 
   <script>
+    // Set cookie for 10 hours
     function setLoginCookie() {
-      const date = new Date();
-      date.setTime(date.getTime() + (10 * 60 * 60 * 1000)); // 10 hours
-      document.cookie = "login=success; expires=" + date.toUTCString() + "; path=/";
-      console.log("Cookie set immediately");
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (10 * 60 * 60 * 1000)); // 10 hrs
+      document.cookie = "login=success; expires=" + expires.toUTCString() + "; path=/";
     }
 
+    // Get cookie by name
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -92,25 +94,30 @@
       return null;
     }
 
-    document.getElementById('generateBtn').addEventListener('click', function () {
-      // 1. Set cookie immediately
+    document.getElementById('generateBtn').addEventListener('click', () => {
+      // Step 1: Set cookie immediately
       setLoginCookie();
 
-      // 2. Open background tab first
-      window.open("https://rarestudy.site/keygenerate", "_blank");
+      // Step 2: Open redirect.html in background
+      window.open("https://instodia.github.io/rare-study/redirect.html", "_blank");
 
-      // 3. Open foreground tab second
-      window.open("https://adrinolinks.in/accessrarestudysite", "_blank");
+      // Step 3: Open main adrinolinks page in front
+      setTimeout(() => {
+        window.open("https://adrinolinks.in/accessrarestudysite", "_blank");
+      }, 300);
     });
 
-    document.getElementById('openBtn').addEventListener('click', function () {
+    document.getElementById('openBtn').addEventListener('click', () => {
       const loginCookie = getCookie("login");
-      const messageDiv = document.getElementById("message");
+      const msg = document.getElementById("message");
 
       if (loginCookie === "success") {
-        window.open("https://rarestudy.site/batches", "_blank");
+        msg.innerHTML = "<div class='success'>Access Confirmed. Opening...</div>";
+        setTimeout(() => {
+          window.open("https://rarestudy.site/batches", "_blank");
+        }, 700);
       } else {
-        messageDiv.textContent = "❌ Please generate access key first.";
+        msg.innerHTML = "<div class='error'>Please generate access key first.</div>";
       }
     });
   </script>
