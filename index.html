@@ -3,166 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shivanshu Shukla</title>
+<title>Shivanshu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: monospace;
 }
 
-/* 🔥 DARK LUXURY BACKGROUND */
 body {
-  height: 100vh;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow: hidden;
+  height:100vh;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#0ff;
+  overflow:hidden;
 }
 
-/* subtle animated glow */
-body::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,255,200,0.15), transparent 70%);
-  top: -100px;
-  left: -100px;
-  animation: moveGlow 8s infinite alternate ease-in-out;
+/* scanlines */
+body::after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events:none;
 }
 
-@keyframes moveGlow {
-  to {
-    transform: translate(200px, 200px);
-  }
+/* flicker */
+@keyframes flicker {
+  0%,18%,22%,25%,53%,57%,100% {opacity:1;}
+  20%,24%,55% {opacity:0.4;}
 }
 
-/* 🧊 GLASS CARD */
+/* card */
 .container {
-  width: 360px;
-  padding: 28px;
-  border-radius: 18px;
-  backdrop-filter: blur(18px);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 50px rgba(0,255,200,0.08);
-  text-align: center;
-  z-index: 2;
-  animation: fadeUp 1s ease;
+  width:350px;
+  padding:25px;
+  border:2px solid #0ff;
+  box-shadow:0 0 20px #0ff, inset 0 0 10px #0ff;
+  background: rgba(0,0,0,0.85);
+  text-align:center;
+  animation:flicker 3s infinite;
 }
 
-@keyframes fadeUp {
-  from {opacity:0; transform: translateY(40px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-/* 👤 PROFILE */
-.profile-pic {
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  border: 2px solid #00ffd5;
-  box-shadow: 0 0 25px rgba(0,255,213,0.6);
-  margin-bottom: 12px;
-}
-
+/* glitch name */
 h1 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
+  font-size:26px;
+  position:relative;
+  margin-bottom:10px;
+  color:#0ff;
 }
 
-.subtitle {
-  font-size: 13px;
-  color: #9ca3af;
-  margin-bottom: 20px;
+h1::before, h1::after {
+  content:attr(data-text);
+  position:absolute;
+  left:0;
 }
 
-/* ⚡ BUTTON BASE */
+h1::before {
+  color:#f0f;
+  transform:translate(-2px,0);
+}
+
+h1::after {
+  color:#0ff;
+  transform:translate(2px,0);
+}
+
+/* profile */
+.profile-pic {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:2px solid #0ff;
+  margin-bottom:10px;
+}
+
+/* links */
 .link, .tool-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px;
-  margin: 10px 0;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 💥 SHINE EFFECT */
-.link::after, .tool-link::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-  transform: translateX(-120%);
-}
-
-.link:hover::after,
-.tool-link:hover::after {
-  animation: shine 0.8s forwards;
-}
-
-@keyframes shine {
-  to { transform: translateX(120%); }
-}
-
-/* 🎨 COLOR SYSTEM (balanced) */
-.link {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(0, 200, 255, 0.4);
-  box-shadow: 0 0 10px rgba(0,200,255,0.2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px;
+  margin:10px 0;
+  text-decoration:none;
+  color:#0ff;
+  border:1px solid #0ff;
+  transition:0.2s;
+  position:relative;
+  overflow:hidden;
 }
 
 .link:hover {
-  border-color: #00c8ff;
-  box-shadow: 0 0 20px rgba(0,200,255,0.6);
-  transform: translateY(-2px) scale(1.02);
+  background:#0ff;
+  color:#000;
+  box-shadow:0 0 20px #0ff;
 }
 
-/* 💚 TOOL BUTTON */
+/* sweep */
+.link:hover::before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, #fff, transparent);
+  animation:sweep 0.4s linear;
+}
+
+@keyframes sweep {
+  from {transform:translateX(-100%);}
+  to {transform:translateX(100%);}
+}
+
+/* tool */
 .tool-link {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(0,255,150,0.4);
-  box-shadow: 0 0 10px rgba(0,255,150,0.2);
+  border-color:#0f0;
+  color:#0f0;
 }
 
 .tool-link:hover {
-  border-color: #00ff95;
-  box-shadow: 0 0 20px rgba(0,255,150,0.6);
-  transform: translateY(-2px) scale(1.02);
+  background:#0f0;
+  color:#000;
+  box-shadow:0 0 20px #0f0;
 }
 
-.icon {
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-/* 🧾 FOOTER */
-.copyright {
-  margin-top: 15px;
-  font-size: 13px;
-  color: #6b7280;
-}
-
-/* 🔥 MICRO INTERACTIONS */
-.link:active,
-.tool-link:active {
-  transform: scale(0.97);
+/* footer */
+p {
+  margin-top:10px;
+  font-size:12px;
+  color:#555;
 }
 </style>
 </head>
@@ -172,34 +153,33 @@ h1 {
 <div class="container">
   <img src="https://i.ibb.co/xSqmdVmq/20250416-044810.jpg" class="profile-pic"/>
 
-  <h1>Shivanshu Shukla</h1>
-  <p class="subtitle">Web Developer • Coder • Builder</p>
+  <h1 data-text="Shivanshu">Shivanshu</h1>
 
   <a href="https://www.instagram.com/shivanshu.real" class="link" target="_blank">
-    <i class="fa fa-instagram icon"></i> Instagram
+    <i class="fa fa-instagram"></i>&nbsp; Instagram
   </a>
 
   <a href="https://youtube.com/@techiegrowth" class="link" target="_blank">
-    <i class="fa fa-youtube-play icon"></i> YouTube
+    <i class="fa fa-youtube-play"></i>&nbsp; YouTube
   </a>
 
   <a href="https://github.com/instodia" class="link" target="_blank">
-    <i class="fa fa-github icon"></i> Github
+    <i class="fa fa-github"></i>&nbsp; Github
   </a>
 
   <a href="https://instodia.netlify.app/smsbomber" class="link" target="_blank">
-    <i class="fa fa-bomb icon"></i> SMS Bomber
+    <i class="fa fa-bomb"></i>&nbsp; SMS Bomber
   </a>
 
   <a href="https://instodia.netlify.app/age-calculator" class="link" target="_blank">
-    <i class="fa fa-user icon"></i> Age Calculator
+    <i class="fa fa-user"></i>&nbsp; Age Calculator
   </a>
 
   <a href="https://instodia.netlify.app/" class="tool-link" target="_blank">
-    <i class="fa fa-wrench icon"></i> Tools Website
+    <i class="fa fa-wrench"></i>&nbsp; Tools Website
   </a>
 
-  <p class="copyright">© instodia</p>
+  <p>instodia</p>
 </div>
 
 </body>
