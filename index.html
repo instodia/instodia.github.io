@@ -3,111 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shivanshu Dashboard</title>
+<title>Shivanshu</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+<meta name="description" content="Instodia: Shivanshu Shukla – A passionate Web Developer and Coder, dedicated to crafting modern, responsive, and user-friendly websites. With expertise in front-end and back-end development, I create seamless digital experiences. Explore my projects, tech insights, and innovative solutions in web development. Let's build something amazing together!" /> <meta property="og:title" content="Profile : Shivanshu Shukla" /> <meta property="og:description" content="Instodia by Shivanshu Shukla - Web Developer and Coder." /> <meta property="og:image" content="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg" /> <meta property="og:type" content="website" /> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> <link rel="icon" type="image/jpg" href="https://i.ibb.co/Cs6W6tT6/IMG-20250404-100134.jpg" />
 <style>
 * {
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Orbitron', sans-serif;
+  font-family:'Segoe UI', sans-serif;
 }
 
 body {
-  background:#05070d;
+  background:#03040a;
   color:white;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
+  overflow:hidden;
 }
 
-/* 🔥 GRID DASHBOARD */
+/* 🌌 animated grid background */
+body::before {
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:
+    linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size:40px 40px;
+  animation:moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid {
+  from {transform:translate(0,0);}
+  to {transform:translate(-40px,-40px);}
+}
+
+/* glowing orb */
+body::after {
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(0,255,255,0.2), transparent);
+  filter:blur(80px);
+  top:20%;
+  left:10%;
+}
+
+/* main container */
 .container {
-  width:380px;
-  padding:20px;
-  border-radius:15px;
-  background:rgba(10,15,30,0.9);
-  box-shadow:0 0 40px rgba(0,255,255,0.1);
+  width:400px;
+  padding:25px;
+  border-radius:18px;
+  background:rgba(10,15,30,0.85);
   border:1px solid rgba(0,255,255,0.2);
+  box-shadow:0 0 50px rgba(0,255,255,0.15);
+  backdrop-filter:blur(10px);
+  position:relative;
+  z-index:2;
 }
 
-/* 👤 PROFILE */
+/* profile */
 .profile {
   text-align:center;
   margin-bottom:20px;
 }
 
 .profile img {
-  width:90px;
-  height:90px;
-  border-radius:12px;
+  width:95px;
+  height:95px;
+  border-radius:50%;
   border:2px solid #00f0ff;
   box-shadow:0 0 20px #00f0ff;
 }
 
 .profile h1 {
   margin-top:10px;
-  font-size:20px;
+  font-size:22px;
   letter-spacing:2px;
 }
 
 .profile p {
   font-size:12px;
-  color:#9ca3af;
+  color:#aaa;
 }
 
-/* ⚡ GRID LINKS */
+/* grid */
 .grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
 }
 
-/* 🎮 CARD BUTTON */
+/* cards */
 .card {
-  padding:15px;
+  padding:16px;
+  border-radius:12px;
   text-align:center;
-  border-radius:10px;
   text-decoration:none;
   color:white;
   background:rgba(0,0,0,0.6);
-  border:1px solid rgba(0,255,255,0.3);
+  border:1px solid rgba(0,255,255,0.2);
   position:relative;
+  transition:0.2s;
   overflow:hidden;
-  transition:0.25s;
 }
 
-/* neon border animation */
-.card::before {
+/* neon glow */
+.card:hover {
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 0 25px #00f0ff;
+}
+
+/* ripple click */
+.card:active::after {
   content:"";
   position:absolute;
-  inset:0;
-  border-radius:10px;
-  padding:1px;
-  background:linear-gradient(90deg, #00f0ff, #ff00ff, #00f0ff);
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  animation:borderMove 3s linear infinite;
+  width:200%;
+  height:200%;
+  background:rgba(0,255,255,0.2);
+  top:-50%;
+  left:-50%;
+  border-radius:50%;
+  animation:ripple 0.4s linear;
 }
 
-@keyframes borderMove {
-  0% {background-position:0%;}
-  100% {background-position:200%;}
+@keyframes ripple {
+  from {transform:scale(0);}
+  to {transform:scale(1);}
 }
 
-/* hover effect */
-.card:hover {
-  transform:translateY(-5px) scale(1.03);
-  box-shadow:0 0 20px #00f0ff;
-}
-
-/* icon */
 .card i {
   font-size:20px;
   margin-bottom:8px;
@@ -119,7 +149,7 @@ body {
   text-align:center;
   margin-top:15px;
   font-size:11px;
-  color:#555;
+  color:#666;
 }
 </style>
 </head>
@@ -131,39 +161,33 @@ body {
   <div class="profile">
     <img src="https://i.ibb.co/xSqmdVmq/20250416-044810.jpg">
     <h1>SHIVANSHU</h1>
-    <p>WEB DEV • CODER</p>
+    <p>WEB DEV • BUILDER</p>
   </div>
 
   <div class="grid">
 
     <a href="https://www.instagram.com/shivanshu.real" target="_blank" class="card">
-      <i class="fa fa-instagram"></i>
-      Instagram
+      <i class="fa fa-instagram"></i>Instagram
     </a>
 
     <a href="https://youtube.com/@techiegrowth" target="_blank" class="card">
-      <i class="fa fa-youtube-play"></i>
-      YouTube
+      <i class="fa fa-youtube-play"></i>YouTube
     </a>
 
     <a href="https://github.com/instodia" target="_blank" class="card">
-      <i class="fa fa-github"></i>
-      Github
+      <i class="fa fa-github"></i>Github
     </a>
 
     <a href="https://instodia.netlify.app/smsbomber" target="_blank" class="card">
-      <i class="fa fa-bomb"></i>
-      SMS Tool
+      <i class="fa fa-bomb"></i>SMS Tool
     </a>
 
     <a href="https://instodia.netlify.app/age-calculator" target="_blank" class="card">
-      <i class="fa fa-user"></i>
-      Age Calc
+      <i class="fa fa-user"></i>Age Tool
     </a>
 
     <a href="https://instodia.netlify.app/" target="_blank" class="card">
-      <i class="fa fa-wrench"></i>
-      Tools
+      <i class="fa fa-wrench"></i>Tools
     </a>
 
   </div>
