@@ -12,156 +12,158 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* 🔥 Animated Gradient Background */
+/* 🔥 DARK LUXURY BACKGROUND */
 body {
   height: 100vh;
-  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
-  background-size: 600% 600%;
-  animation: gradientMove 12s ease infinite;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  overflow: hidden;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* subtle animated glow */
+body::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,200,0.15), transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation: moveGlow 8s infinite alternate ease-in-out;
 }
 
-/* 🧊 Glass Container */
+@keyframes moveGlow {
+  to {
+    transform: translate(200px, 200px);
+  }
+}
+
+/* 🧊 GLASS CARD */
 .container {
-  width: 350px;
-  padding: 25px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  width: 360px;
+  padding: 28px;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 50px rgba(0,255,200,0.08);
   text-align: center;
-  border: 1px solid rgba(255,255,255,0.1);
-  animation: fadeIn 1.2s ease;
+  z-index: 2;
+  animation: fadeUp 1s ease;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-/* 🧑 Profile */
+/* 👤 PROFILE */
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
-  border: 3px solid cyan;
-  box-shadow: 0 0 20px cyan;
-  margin-bottom: 10px;
+  border: 2px solid #00ffd5;
+  box-shadow: 0 0 25px rgba(0,255,213,0.6);
+  margin-bottom: 12px;
 }
 
 h1 {
-  font-size: 26px;
-  margin: 10px 0;
-  background: linear-gradient(90deg, #00f2fe, #4facfe);
-  -webkit-background-clip: text;
-  color: transparent;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  font-size: 14px;
-  color: #ccc;
+  font-size: 13px;
+  color: #9ca3af;
   margin-bottom: 20px;
 }
 
-/* ⚡ Neon Buttons */
+/* ⚡ BUTTON BASE */
 .link, .tool-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 13px;
   margin: 10px 0;
-  padding: 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Glow effect */
-.link::before, .tool-link::before {
+/* 💥 SHINE EFFECT */
+.link::after, .tool-link::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 120%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  left: -100%;
-  top: 0;
-  transition: 0.5s;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-120%);
 }
 
-.link:hover::before,
-.tool-link:hover::before {
-  left: 100%;
+.link:hover::after,
+.tool-link:hover::after {
+  animation: shine 0.8s forwards;
 }
 
-/* Different styles */
+@keyframes shine {
+  to { transform: translateX(120%); }
+}
+
+/* 🎨 COLOR SYSTEM (balanced) */
 .link {
-  background: rgba(0, 123, 255, 0.2);
-  border: 1px solid #00c6ff;
-  box-shadow: 0 0 10px #00c6ff;
-}
-
-.tool-link {
-  background: rgba(0,255,150,0.2);
-  border: 1px solid #00ff95;
-  box-shadow: 0 0 10px #00ff95;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0,200,255,0.2);
 }
 
 .link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00c6ff;
+  border-color: #00c8ff;
+  box-shadow: 0 0 20px rgba(0,200,255,0.6);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* 💚 TOOL BUTTON */
+.tool-link {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(0,255,150,0.4);
+  box-shadow: 0 0 10px rgba(0,255,150,0.2);
 }
 
 .tool-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00ff95;
+  border-color: #00ff95;
+  box-shadow: 0 0 20px rgba(0,255,150,0.6);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .icon {
   margin-right: 10px;
+  font-size: 16px;
 }
 
-/* 💥 Floating Telegram Button */
-.floating {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 15px #00c6ff;
-  transition: 0.3s;
-}
-
-.floating:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #00c6ff;
-}
-
-/* 🧾 Footer */
+/* 🧾 FOOTER */
 .copyright {
   margin-top: 15px;
-  font-size: 14px;
-  color: #aaa;
+  font-size: 13px;
+  color: #6b7280;
 }
 
+/* 🔥 MICRO INTERACTIONS */
+.link:active,
+.tool-link:active {
+  transform: scale(0.97);
+}
 </style>
 </head>
 
@@ -170,15 +172,11 @@ h1 {
 <div class="container">
   <img src="https://i.ibb.co/xSqmdVmq/20250416-044810.jpg" class="profile-pic"/>
 
-  <h1>Shivanshu</h1>
-  <p class="subtitle">Web Developer • Coder • Creator</p>
+  <h1>Shivanshu Shukla</h1>
+  <p class="subtitle">Web Developer • Coder • Builder</p>
 
   <a href="https://www.instagram.com/shivanshu.real" class="link" target="_blank">
     <i class="fa fa-instagram icon"></i> Instagram
-  </a>
-
-  <a href="https://t.me/+__Bfpz0N9Mo5NWZl" class="link" target="_blank">
-    <i class="fa fa-telegram icon"></i> Telegram
   </a>
 
   <a href="https://youtube.com/@techiegrowth" class="link" target="_blank">
@@ -203,10 +201,6 @@ h1 {
 
   <p class="copyright">© instodia</p>
 </div>
-
-<a href="https://t.me/+__Bfpz0N9Mo5NWZl" class="floating">
-  <i class="fa fa-telegram"></i>
-</a>
 
 </body>
 </html>
